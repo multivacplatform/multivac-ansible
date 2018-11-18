@@ -1,0 +1,22 @@
+[logging]
+ default = FILE:/var/log/krb5libs.log
+ kdc = FILE:/var/log/krb5kdc.log
+ admin_server = FILE:/var/log/kadmind.log
+
+[libdefaults]
+ default_realm = {{ realm_name }}
+ dns_lookup_realm = {{ dns_lookup_realm }}
+ dns_lookup_kdc = {{ dns_lookup_kdc }}
+ ticket_lifetime = {{ ticket_lifetime }}
+ renew_lifetime = {{ renew_lifetime }}
+ forwardable = {{ forwardable }}
+
+[realms]
+ {{ realm_name }} = {
+  kdc = {{ kdc_hostname }}
+  admin_server = {{ admin_hostname }}
+ }
+
+[domain_realm]
+ .{{ realm_name|lower() }} = {{ realm_name|upper() }}
+  {{ realm_name|lower() }} = {{ realm_name|upper() }}

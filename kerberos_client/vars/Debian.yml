@@ -1,0 +1,5 @@
+---
+
+ubuntu_pkg:
+  - krb5-user
+  - libsasl2-modules-gssapi-mit

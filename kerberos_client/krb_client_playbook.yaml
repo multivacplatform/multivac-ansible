@@ -1,0 +1,5 @@
+- hosts: '{{ target }}'
+  gather_facts: yes
+  become: true
+  roles:
+  - {role: kerberos_client, realm_name: "", kadmin_user: "", kadmin_pass: "", kdc_hostname: "", admin_hostname: ""}
