@@ -12,5 +12,8 @@
 - name: Copy the LDAP configuration file
   template: src=ldap.conf.j2 dest=/etc/ldap.conf
 
+- name: Copy the SSL LDAP configuration file
+  template: src=ldap_config.conf.j2 dest=/etc/ldap/ldap.conf 
+
 - name: Copy the LDAP configuration file
   template: src=ca_certs.pem dest=/etc/ldap/ca_certs.pem
