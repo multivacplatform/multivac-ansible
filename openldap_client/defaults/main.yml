@@ -1,0 +1,8 @@
+---
+
+ldap_base: dc=example,dc=com
+ldap_uri: ldap://example.com
+ldap_version: 3
+ldap_rootbinddn: cn=admin,dc=example,dc=come
+ldap_pam_password: md5
+ldap_pem_file: /etc/ldap/ca_certs.pem

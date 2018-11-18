@@ -1,0 +1,16 @@
+---
+# tasks file for openldap-client
+
+- name: Install the libnss-ldap packages
+  package:
+     name: libnss-ldap
+     state: present
+
+- name: Copy the nsswitch configuration file
+  template: src=nsswitch.conf.j2 dest=/etc/nsswitch.conf
+
+- name: Copy the LDAP configuration file
+  template: src=ldap.conf.j2 dest=/etc/ldap.conf
+
+- name: Copy the LDAP configuration file
+  template: src=ca_certs.pem dest=/etc/ldap/ca_certs.pem
