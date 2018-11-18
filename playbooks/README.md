@@ -1,4 +1,6 @@
 # Ansible Playbooks
+Stand-alone Ansible playbooks
+
 ## Upgrade Ubuntu Hosts
 This playbook will update, upgrade, and autoremove dependencies that are no longer required.
 ```bash
