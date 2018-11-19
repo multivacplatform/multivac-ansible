@@ -1,0 +1,94 @@
+---
+- hosts: '{{ target }}'
+  become: true
+  tasks:
+      - name: install the latest version of pip
+        package: name=python-pip state=latest
+      - name: Upgrade pip
+        pip:
+          name: pip
+          extra_args: --upgrade
+      - name: install the latest version of pip3
+        package: name=python3-pip state=latest
+      - name: Upgrade pip3
+        pip:
+          name: pip
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip install spark-sklearn
+        pip:
+          name: spark-sklearn
+          state: present
+          extra_args: --upgrade
+      - name: pip install NLTK
+        pip:
+          name: nltk
+          state: present
+          extra_args: --upgrade
+      - name: pip install numpy
+        pip:
+          name: numpy
+          state: present
+          extra_args: --upgrade
+      - name: pip install matplotlib
+        pip:
+          name: matplotlib
+          state: present
+          extra_args: --upgrade
+      - name: pip install Networkx
+        pip:
+          name: networkx
+          state: present
+          extra_args: --upgrade
+      - name: pip install python-louvain
+        pip:
+          name: python-louvain
+          state: present
+          extra_args: --upgrade
+      - name: pip install seaborn
+        pip:
+          name: seaborn
+          state: present
+          extra_args: --upgrade
+      - name: pip3 install spark-sklearn
+        pip:
+          name: spark-sklearn
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install NLTK
+        pip:
+          name: nltk
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install numpy
+        pip:
+          name: numpy
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install matplotlib
+        pip:
+          name: matplotlib
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install Networkx
+        pip:
+          name: networkx
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install python-louvain
+        pip:
+          name: python-louvain
+          state: present
+          extra_args: --upgrade
+          executable: pip3
+      - name: pip3 install seaborn
+        pip:
+          name: seaborn
+          state: present
+          extra_args: --upgrade
+          executable: pip3
