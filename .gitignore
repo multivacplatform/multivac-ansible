@@ -1,2 +1,3 @@
 krb_client_playbook.yaml
 ldap_client_playbook.yaml
+openldap_client/templates/ca_certs.pem
