@@ -6,7 +6,7 @@
       anaconda_install_spark_sklearn: '-y -c sotera spark-sklearn'
       anaconda_install_nltk: '-y -c conda-forge nltk'
       anaconda_install_nltk_data: '-y -c conda-forge nltk_data'
-      anaconda_install_matplotlib: '-y -c conda-forge matplotlib'
+      anaconda_install_matplotlib: '-y matplotlib'
       anaconda_install_Networkx: '-y -c conda-forge networkx'
       anaconda_install_seaborn: '-y -c conda-forge seaborn'
       anaconda_install_python_louvain: '-y -c conda-forge python-louvain'
