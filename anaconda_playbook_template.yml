@@ -1,0 +1,6 @@
+- hosts: '{{ target }}'
+  gather_facts: yes
+  become: true
+  roles:
+    - role: anaconda
+      anaconda_install_packages: 'numpy scikit-learn nltk'
