@@ -1,12 +1,9 @@
 ---
-- hosts: '{{ target }}'
-  become: true
-  tasks:
-      - name: Conda install packages
-        command: 'conda install {{ anaconda_install_packages }}'
-        environment:
-          PATH: '{{ anaconda_conda_executable }}'
-      - name: Update conda packages
-        command: 'conda update -y --all'
-        environment:
-          PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install packages
+  command: 'conda install {{ anaconda_install_packages }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Update conda packages
+  command: 'conda update -y --all'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
