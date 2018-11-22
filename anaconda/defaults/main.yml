@@ -3,7 +3,7 @@ anaconda_conda_executable: /opt/cloudera/parcels/Anaconda/bin
 anaconda_install_spark_sklearn: '-c sotera spark-sklearn'
 anaconda_install_nltk: '-c conda-forge nltk'
 anaconda_install_nltk_data: '-c conda-forge nltk_data'
-anaconda_install_matplotlib: '-c conda-forge matplotlib'
+anaconda_install_matplotlib: 'matplotlib'
 anaconda_install_Networkx: '-c conda-forge networkx'
 anaconda_install_seaborn: '-c conda-forge seaborn'
 anaconda_install_python_louvain: '-c conda-forge python-louvain'
