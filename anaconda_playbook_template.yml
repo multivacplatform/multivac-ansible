@@ -3,4 +3,4 @@
   become: true
   roles:
     - role: anaconda
-      anaconda_install_packages: 'numpy scikit-learn nltk'
+      anaconda_install_packages: 'numpy nltk spark-sklearn matplotlib Networkx seaborn python-louvain'
