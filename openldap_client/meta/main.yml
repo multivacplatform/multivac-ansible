@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: "Maziyar Panahi"
+  company: ISC-PIF/CNRS
+  license: MIT
+  min_ansible_version: 2.3
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 14.0
+        - 16.0
+  categories: []
+dependencies: []
+  
