@@ -15,10 +15,6 @@
   command: 'conda install {{ anaconda_install_nltk }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-- name: Conda install packages
-  command: 'conda install {{ anaconda_install_packages }}'
-  environment:
-    PATH: '{{ anaconda_conda_executable }}'
 - name: Conda install nltk data
   command: 'conda install {{ anaconda_install_nltk_data }}'
   environment:
