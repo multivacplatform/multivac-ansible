@@ -1,0 +1,5 @@
+- hosts: '{{ target }}'
+  gather_facts: yes
+  become: true
+  roles:
+  - {role: ../../openldap_client, ldap_base: "", ldap_uri: "", ldap_version: "", ldap_rootbinddn: "", ldap_pam_password: "", ldap_pem_file: ""}
