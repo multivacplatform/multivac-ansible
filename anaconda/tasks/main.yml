@@ -12,7 +12,7 @@
   environment:
     PATH: '{{ anaconda_conda_executable }}'
 - name: Create Conda env python 3.6 
-  command: 'conda create --name py36 python=3.6'
+  command: 'conda create -y --name py36 python=3.6'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
 - name: Activate Conda env python 3.6 
