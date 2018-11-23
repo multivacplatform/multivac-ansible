@@ -1,57 +1,61 @@
 ---
-- name: clean Conda
-  command: 'conda clean --all -y'
+# - name: clean Conda
+#   command: 'conda clean --all -y'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
+# - name: Update Conda
+#   command: 'conda update conda -y'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
+# - name: Disable Conda report_errors 
+#   command: 'conda config --set report_errors false'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
+# - name: Create Conda env python 3.6 
+#   command: 'conda create -y --name py36 python=3.6'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
+- name: Add channel to Conda
+  command: 'conda config --append channels conda-forge'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-- name: Update Conda
-  command: 'conda update conda -y'
+# - name: Activate Conda env python 3.6 
+#   command: 'conda activate py36'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install nltk
+  command: 'conda install {{ anaconda_install_nltk }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-- name: Disable Conda report_errors 
-  command: 'conda config --set report_errors false'
+- name: Conda install nltk data
+  command: 'conda install {{ anaconda_install_nltk_data }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-- name: Create Conda env python 3.6 
-  command: 'conda create -y --name py36 python=3.6'
+- name: Conda install matplotlib
+  command: 'conda install {{ anaconda_install_matplotlib }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-- name: Activate Conda env python 3.6 
-  command: 'conda activate py36'
+- name: Conda install Networkx
+  command: 'conda install {{ anaconda_install_Networkx }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install spark_sklearn
-#   command: 'conda install {{ anaconda_install_spark_sklearn }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install nltk
-#   command: 'conda install {{ anaconda_install_nltk }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install nltk data
-#   command: 'conda install {{ anaconda_install_nltk_data }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install matplotlib
-#   command: 'conda install {{ anaconda_install_matplotlib }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install Networkx
-#   command: 'conda install {{ anaconda_install_Networkx }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install seaborn
-#   command: 'conda install {{ anaconda_install_seaborn }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install python-louvain
-#   command: 'conda install {{ anaconda_install_python_louvain }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install numpy
-#   command: 'conda install {{ anaconda_install_numpy }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Update conda packages
-#   command: 'conda update -y --all'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install seaborn
+  command: 'conda install {{ anaconda_install_seaborn }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install python-louvain
+  command: 'conda install {{ anaconda_install_python_louvain }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install numpy
+  command: 'conda install {{ anaconda_install_numpy }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install spark_sklearn
+  command: 'conda install {{ anaconda_install_spark_sklearn }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'    
+- name: Update conda packages
+  command: 'conda update -y --all'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
