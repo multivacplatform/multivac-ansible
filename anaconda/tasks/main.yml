@@ -3,6 +3,10 @@
   file:
       path: /opt/cloudera/parcels/Anaconda/envs/py36
       state: absent
+- name: remove Conda envs
+  file:
+      path: /opt/cloudera/parcels/Anaconda/envs/py27
+      state: absent      
 - name: clean Conda
   command: 'conda clean --all -y'
   environment:
