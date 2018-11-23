@@ -10,11 +10,15 @@
 - name: Disable Conda report_errors 
   command: 'conda config --set report_errors false'
   environment:
-    PATH: '{{ anaconda_conda_executable }}'    
+    PATH: '{{ anaconda_conda_executable }}'
 - name: Create Conda env python 3.6 
   command: 'conda create --name py36 python=3.6'
   environment:
-    PATH: '{{ anaconda_conda_executable }}'    
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Activate Conda env python 3.6 
+  command: 'conda activate py36'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
 - name: Conda install spark_sklearn
   command: 'conda install {{ anaconda_install_spark_sklearn }}'
   environment:
