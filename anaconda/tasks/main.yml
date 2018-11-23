@@ -1,6 +1,8 @@
 ---
 - name: remove Conda envs
-  command: 'rm -rf /opt/cloudera/parcels/Anaconda/envs/*'
+  file:
+      path: /opt/cloudera/parcels/Anaconda/envs/py36
+      state: absent
 - name: clean Conda
   command: 'conda clean --all -y'
   environment:
