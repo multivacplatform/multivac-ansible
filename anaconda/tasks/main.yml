@@ -15,20 +15,20 @@
   command: 'conda config --set report_errors false'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-## Create Python 3.6 and 2.7 env    
-- name: Create Conda env python 2.7
-  command: 'conda create -y --name py27 python=2.7'
+- name: Install Python 3.6 with conda
+  command: 'conda install python=3.6 -y'
   environment:
-    PATH: '{{ anaconda_conda_executable }}'
+    PATH: '{{ anaconda_conda_executable }}'    
+## Create Python 3.6 and 2.7 env    
+# - name: Create Conda env python 2.7
+#   command: 'conda create -y -n py27 python=2.7'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
 - name: Create Conda env python 3.6
-  command: 'conda create -y --name py36 python=3.6'
+  command: 'conda create -y -n py36 python=3.6'
   environment:
     PATH: '{{ anaconda_conda_executable }}'    
 ## Install Python 3.6 and 2.7 into envs
- - name: Install Python 3.6 with conda
-  command: 'conda install python=3.6 -y'
-  environment:
-    PATH: '{{ anaconda_conda_executable }}'
 - name: Install Python 3.6 in env py36
   command: 'conda install -n py36 python=3.6 -y'
   environment:
@@ -78,7 +78,7 @@
   command: 'conda install {{ anaconda_install_spark_sklearn }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'    
-- name: Update conda packages
-  command: 'conda update -y --all'
-  environment:
-    PATH: '{{ anaconda_conda_executable }}'
+# - name: Update conda packages
+#   command: 'conda update -y --all'
+#   environment:
+#     PATH: '{{ anaconda_conda_executable }}'
