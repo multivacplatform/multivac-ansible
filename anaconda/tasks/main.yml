@@ -1,20 +1,37 @@
 ---
-# - name: clean Conda
-#   command: 'conda clean --all -y'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Update Conda
-#   command: 'conda update conda -y'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Disable Conda report_errors 
-#   command: 'conda config --set report_errors false'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Create Conda env python 3.6 
-#   command: 'conda create -y --name py36 python=3.6'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
+- name: remove Conda envs
+  command: 'rm -rf /opt/cloudera/parcels/Anaconda/envs/*'
+- name: clean Conda
+  command: 'conda clean --all -y'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Update Conda
+  command: 'conda update conda -y'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Disable Conda report_errors 
+  command: 'conda config --set report_errors false'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+## Create Python 3.6 and 2.7 env    
+- name: Create Conda env python 2.7
+  command: 'conda create -y --name py27 python=2.7'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Create Conda env python 3.6
+  command: 'conda create -y --name py36 python=3.6'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'    
+## Install Python 3.6 and 2.7 into envs
+- name: Install Python 3.6 in env py36
+  command: 'conda install -n py36 python=3.6 -y'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
+- name: Install Python 2.7 in env py27
+  command: 'conda install -n py27 python=2.7 -y'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'    
+##
 - name: Add channel to Conda
   command: 'conda config --append channels conda-forge'
   environment:
