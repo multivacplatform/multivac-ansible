@@ -11,8 +11,8 @@
   command: 'conda config --set report_errors false'
   environment:
     PATH: '{{ anaconda_conda_executable }}'    
-- name: Create Conda env python 3.4 
-  command: 'conda create --name py34 python=3.4'
+- name: Create Conda env python 3.6 
+  command: 'conda create --name py36 python=3.6'
   environment:
     PATH: '{{ anaconda_conda_executable }}'    
 - name: Conda install spark_sklearn
