@@ -3,11 +3,11 @@
   become: true
   roles:
     - role: anaconda
-      anaconda_install_spark_sklearn: '-y -c sotera spark-sklearn'
-      anaconda_install_nltk: '-y -c conda-forge nltk'
-      anaconda_install_nltk_data: '-y -c conda-forge nltk_data'
-      anaconda_install_matplotlib: '-y matplotlib'
-      anaconda_install_Networkx: '-y -c conda-forge networkx'
-      anaconda_install_seaborn: '-y -c conda-forge seaborn'
-      anaconda_install_python_louvain: '-y -c conda-forge python-louvain'
-      anaconda_install_numpy: '-y -c conda-forge numpy'
+      anaconda_install_spark_sklearn: '-y -n py34 -c sotera spark-sklearn'
+      anaconda_install_nltk: '-y -n py34 -c conda-forge nltk'
+      anaconda_install_nltk_data: '-y -n py34 -c conda-forge nltk_data'
+      anaconda_install_matplotlib: '-y -n py34 matplotlib'
+      anaconda_install_Networkx: '-y -n py34 -c conda-forge networkx'
+      anaconda_install_seaborn: '-y -n py34 -c conda-forge seaborn'
+      anaconda_install_python_louvain: '-y -n py34 -c conda-forge python-louvain'
+      anaconda_install_numpy: '-y -n py34 -c conda-forge numpy'
