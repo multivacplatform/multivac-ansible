@@ -15,6 +15,11 @@
           name: pip
           extra_args: --upgrade
           executable: pip3
+      - name: pip install spark-nlp
+        pip:
+          name: spark-nlp
+          state: present
+          extra_args: --upgrade
       - name: pip install spark-sklearn
         pip:
           name: spark-sklearn
@@ -50,6 +55,11 @@
           name: seaborn
           state: present
           extra_args: --upgrade
+      - name: pip3 install spark-nlp
+        pip:
+          name: spark-nlp
+          state: present
+          extra_args: --upgrade    
       - name: pip3 install spark-sklearn
         pip:
           name: spark-sklearn
