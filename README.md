@@ -1,6 +1,7 @@
 # multivac-ansible [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/multivacplatform/multivac-ansible/blob/master/LICENSE) [![Multivac Discuss](https://img.shields.io/badge/multivac-discuss-ff69b4.svg)](https://discourse.iscpif.fr/c/multivac) [![Multivac Channel](https://img.shields.io/badge/multivac-chat-ff69b4.svg)](https://chat.iscpif.fr/channel/multivac)
 
 ## Install and config LDAP client with TLS
+
 Role variables:
 
 ```yaml
@@ -13,6 +14,7 @@ ldap_pem_file: /etc/ldap/ca_certs.pem
 ```
 
 Example of role:
+
 ```yaml
 roles:
   - {role: openldap_client, ldap_base: "", ldap_uri: "", ldap_version: "", ldap_rootbinddn: "", ldap_pam_password: "", ldap_pem_file: ""}
