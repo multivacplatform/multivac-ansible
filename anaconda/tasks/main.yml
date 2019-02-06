@@ -15,6 +15,10 @@
   command: 'conda update conda -y'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
+- name: Update Conda all
+  command: 'conda update --all -y'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'    
 - name: Disable Conda report_errors 
   command: 'conda config --set report_errors false'
   environment:
