@@ -46,6 +46,10 @@
 #   command: 'conda activate py36'
 #   environment:
 #     PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install spark-nlp
+  command: 'conda install {{ anaconda_install_spark_nlp }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
 - name: Conda install nltk
   command: 'conda install {{ anaconda_install_nltk }}'
   environment:
