@@ -1,5 +1,6 @@
 ---
 anaconda_conda_executable: /opt/cloudera/parcels/Anaconda/bin
+anaconda_install_spark_nlp: '-c johnsnowlabs spark-nlp'
 anaconda_install_spark_sklearn: '-c sotera spark-sklearn'
 anaconda_install_nltk: '-c conda-forge nltk'
 anaconda_install_nltk_data: '-c conda-forge nltk_data'
