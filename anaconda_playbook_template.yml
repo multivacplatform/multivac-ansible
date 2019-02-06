@@ -3,6 +3,7 @@
   become: true
   roles:
     - role: anaconda
+      anaconda_install_spark_nlp: '-y -n py36 -c johnsnowlabs spark-nlp'
       anaconda_install_nltk: '-y -n py36 nltk'
       anaconda_install_nltk_data: '-y -n py36 nltk_data'
       anaconda_install_matplotlib: '-y -n py36 matplotlib'
