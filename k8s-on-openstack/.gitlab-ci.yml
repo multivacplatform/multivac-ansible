@@ -1,0 +1,52 @@
+image: gitlab.infraly.ch:4567/francois/docker-ansible:master
+
+stages:
+  - syntax
+  - test
+  - staging
+
+syntax:
+  stage: syntax
+  script:
+    - ansible-playbook --version
+    - ansible-playbook --syntax-check site.yaml
+
+lint:
+  stage: syntax
+  script:
+    - ansible-lint site.yaml
+  allow_failure: true
+
+test:
+  stage: test
+  variables:
+    NAME: k8s-gitlab-ci-$CI_BUILD_ID
+    KEY: gitlab-ci-$CI_BUILD_ID
+  script:
+    - mkdir -p ~/.ssh
+    - ssh-keygen -t rsa -P "" -f ~/.ssh/id_rsa
+    - cat ~/.ssh/id_rsa
+    - openstack keypair create --public-key ~/.ssh/id_rsa.pub gitlab-ci-$CI_BUILD_ID
+    - ansible-playbook site.yaml
+  after_script:
+    - STATE=absent ansible-playbook site.yaml || true
+    - openstack keypair delete gitlab-ci-$CI_BUILD_ID || true
+
+staging:
+  stage: staging
+  variables:
+    NAME: k8s-staging
+    KEY: k8s-staging
+  script:
+    - mkdir -p ~/.ssh
+    - echo $STAGING_SSH_PRIVATE_KEY | base64 -d > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo $STAGING_SSH_PUBLIC_KEY | base64 -d > ~/.ssh/id_rsa.pub
+    - openstack keypair delete $KEY || true
+    - openstack keypair create --public-key ~/.ssh/id_rsa.pub $KEY
+    - ansible-playbook site.yaml
+  only:
+    - master
+  artifacts:
+    paths:
+      - admin.conf
