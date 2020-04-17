@@ -23,11 +23,11 @@
   command: 'conda config --set report_errors false'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-## Create Python 3.6 and 2.7 env
-# - name: Create Conda env python 2.7
-#   command: 'conda create -y -n py27 python=2.7'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
+# Create Python 3.6 and 2.7 env
+- name: Install python 3.6
+  command: 'conda install -y python=3.6'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'
 - name: Create Conda env python 3.6
   command: 'conda create -y -n py36 python=3.6'
   environment:
