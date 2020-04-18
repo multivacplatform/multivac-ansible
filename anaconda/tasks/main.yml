@@ -62,31 +62,3 @@
   command: 'conda install {{ anaconda_install_nltk_data }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install matplotlib
-#   command: 'conda install {{ anaconda_install_matplotlib }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install Networkx
-#   command: 'conda install {{ anaconda_install_Networkx }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install seaborn
-#   command: 'conda install {{ anaconda_install_seaborn }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install python-louvain
-#   command: 'conda install {{ anaconda_install_python_louvain }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install numpy
-#   command: 'conda install {{ anaconda_install_numpy }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
-# - name: Conda install spark_sklearn
-#   command: 'conda install {{ anaconda_install_spark_sklearn }}'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'    
-# - name: Update conda packages
-#   command: 'conda update -y --all'
-#   environment:
-#     PATH: '{{ anaconda_conda_executable }}'
