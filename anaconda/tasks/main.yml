@@ -38,7 +38,7 @@
     PATH: '{{ anaconda_conda_executable }}'    
 ## Install Python 3.6 and 2.7 into envs
 - name: Install Python 3.7 in env py37
-  command: 'conda install -n py36 python=3.7.0 -y'
+  command: 'conda install -n py37 python=3.7.0 -y'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
 # - name: Install Python 2.7 in env py27
