@@ -1,11 +1,15 @@
 ---
 - name: remove Conda envs
   file:
-      path: /opt/cloudera/parcels/Anaconda/envs/py36
+      path: /opt/cloudera/parcels/Anaconda/envs/py27
       state: absent
 - name: remove Conda envs
   file:
-      path: /opt/cloudera/parcels/Anaconda/envs/py27
+      path: /opt/cloudera/parcels/Anaconda/envs/py36
+      state: absent      
+- name: remove Conda envs
+  file:
+      path: /opt/cloudera/parcels/Anaconda/envs/py37
       state: absent      
 - name: clean Conda
   command: 'conda clean --all -y'
@@ -28,13 +32,13 @@
 #   command: 'conda create -y -n py27 python=2.7'
 #   environment:
 #     PATH: '{{ anaconda_conda_executable }}'
-- name: Create Conda env python 3.6
-  command: 'conda create -y -n py36 python=3.6'
+- name: Create Conda env python 3.7
+  command: 'conda create -y -n py37 python=3.7.0'
   environment:
     PATH: '{{ anaconda_conda_executable }}'    
 ## Install Python 3.6 and 2.7 into envs
-- name: Install Python 3.6 in env py36
-  command: 'conda install -n py36 python=3.6 -y'
+- name: Install Python 3.7 in env py37
+  command: 'conda install -n py36 python=3.7.0 -y'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
 # - name: Install Python 2.7 in env py27
