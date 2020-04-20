@@ -66,3 +66,7 @@
   command: 'conda install {{ anaconda_install_nltk_data }}'
   environment:
     PATH: '{{ anaconda_conda_executable }}'
+- name: Conda install scikit_learn
+  command: 'conda install {{ anaconda_install_scikit_learn }}'
+  environment:
+    PATH: '{{ anaconda_conda_executable }}'    
