@@ -30,7 +30,13 @@ uri {{ ldap_uri }}
 # if supported by client library)
 ldap_version {{ ldap_version }}
 
+{% if ldap_rootbinddn | default('') | trim %}
 rootbinddn {{ ldap_rootbinddn }}
+{% endif %}
+
+# Verify the institutional LDAP server with the deployed public CA.
+tls_cacertfile {{ ldap_pem_file }}
+tls_checkpeer yes
 
 pam_password {{ ldap_pam_password }}
 
